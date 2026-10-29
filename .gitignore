@@ -1,0 +1,29 @@
+# Git
+node_modules/
+backend/__pycache__/
+backend/.venv/
+backend/*.egg-info/
+.venv/
+.env
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Storage (data - never commit)
+**/storage/
+storage_data/
+backend/dev.db
+backend/*.db
+
+# OS
+*.log
+.DS_Store

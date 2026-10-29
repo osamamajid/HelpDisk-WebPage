@@ -1,0 +1,19 @@
+{
+  "menu": "القائمة",
+  "login": "تسجيل الدخول",
+  "adminArea": "الإدارة",
+  "public": {
+    "home": "الرئيسية",
+    "search": "تصفّح",
+    "favorites": "المفضّلة"
+  },
+  "admin": {
+    "dashboard": "لوحة المعلومات",
+    "files": "الملفات",
+    "upload": "رفع",
+    "categories": "الفئات",
+    "brands": "العلامات التجارية",
+    "operatingSystems": "أنظمة التشغيل",
+    "tags": "الوسوم"
+  }
+}

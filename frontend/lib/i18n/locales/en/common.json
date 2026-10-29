@@ -1,0 +1,14 @@
+{
+  "appName": "IT Driver Library",
+  "appDescription": "A central repository for drivers, utilities and technical documents, organized by category, brand and operating system.",
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "locale": {
+    "label": "Language",
+    "switchFailed": "Could not change the language"
+  }
+}

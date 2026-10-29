@@ -1,0 +1,101 @@
+{
+    "loadRateLimited":  "Too many requests. Please wait a moment and try again.",
+    "loadFailed":  "We couldn't load this file right now. Please try again.",
+    "noDescription":  "No description provided.",
+    "size":  "Size",
+    "downloads":  "Downloads",
+    "added":  "Added",
+    "metaFallback":  "File details",
+    "breadcrumb":  "Breadcrumb",
+    "crumbs":  {
+                   "home":  "Home"
+               },
+    "descriptionTitle":  "Description",
+    "compatibility":  "Compatibility",
+    "operatingSystems":  "Operating systems",
+    "architectures":  "Architectures",
+    "notSpecified":  "Not specified",
+    "details":  "Details",
+    "mimeType":  "MIME type",
+    "lastDownload":  "Last download",
+    "tags":  "Tags",
+    "related":  "Related files",
+    "viewAll":  "View all",
+    "downloadHint":  "Downloads are counted for this library\u0027s statistics.",
+    "favoritesTitle":  "Favorites",
+    "filtersShow":  "Show filters",
+    "filtersHide":  "Hide filters",
+    "search":  {
+                   "placeholder":  "Search drivers, models, versionsâ€¦",
+                   "label":  "Search the library",
+                   "resultsTitle":  "Search results"
+               },
+    "favorites":  {
+                      "title":  "Your favorites",
+                      "description":  "Files you have starred for quick access.",
+                      "emptyTitle":  "No favorites yet",
+                      "emptyDescription":  "Star a file to keep it here for quick access."
+                  },
+    "results":  {
+                    "errorTitle":  "Could not load files",
+                    "retry":  "Try again",
+                    "filtersLabel":  "Filters",
+                    "loading":  "Loadingâ€¦",
+                    "count":  "{total, plural, one {# file} other {# files}}",
+                    "filters":  "Filters",
+                    "perPage":  "Files per page",
+                    "gridView":  "Grid view",
+                    "listView":  "List view",
+                    "viewOptions":  "View options",
+                    "emptyTitle":  "No files found",
+                    "emptyDescription":  "Try adjusting your search or clearing some filters."
+                },
+    "sort":  {
+                 "label":  "Sort by",
+                 "recent":  "Most recent",
+                 "downloads":  "Most downloaded",
+                 "name":  "Name (Aâ€“Z)"
+             },
+    "filters":  {
+                    "title":  "Filters",
+                    "categories":  "Categories",
+                    "brands":  "Brands",
+                    "operatingSystems":  "Operating systems",
+                    "architectures":  "Architecture",
+                    "favoritesOnly":  "Favorites only",
+                    "moreFilters":  "More filters",
+                    "searchPlaceholder":  "Filter optionsâ€¦",
+                    "noOptions":  "No matching options",
+                    "clear":  "Clear",
+                    "active":  "Active filters",
+                    "removeFilter":  "Remove filter",
+                    "clearAll":  "Clear all"
+                },
+    "pagination":  {
+                       "label":  "Pagination",
+                       "previous":  "Previous page",
+                       "next":  "Next page"
+                   },
+    "favorite":  {
+                     "added":  "Added to favorites",
+                     "removed":  "Removed from favorites",
+                     "failed":  "Could not update favorites",
+                     "add":  "Add to favorites",
+                     "remove":  "Remove from favorites",
+                     "starred":  "Starred"
+                 },
+    "download":  {
+                     "label":  "Download"
+                 },
+    "actions":  {
+                    "linkCopied":  "Link copied to clipboard",
+                    "linkCopyFailed":  "Could not copy the link",
+                    "copyLink":  "Copy link",
+                    "edit":  "Edit"
+                },
+    "rateLimitedTitle":  "Rate limit exceeded",
+    "rateLimitedDesc":  "Too many requests. Please wait a moment and try again.",
+    "loadErrorTitle":  "Could not load file",
+    "loadErrorDesc":  "An unexpected error occurred. Please try again later.",
+    "backHome":  "Back to home"
+}

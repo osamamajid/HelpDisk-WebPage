@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design tokens.
+ *
+ * Colours are HSL triplets so Tailwind can apply alpha (`bg-primary/15`).
+ * The font stacks cover both scripts: Latin through Inter/Segoe, Arabic through
+ * Segoe UI/Tahoma/Noto Naskh, all of which ship with the target OSes so the
+ * build never depends on a network font fetch.
+ */
+@layer base {
+  :root {
+    /* FieldOps: IBM Plex Sans Arabic + JetBrains Mono when present, else the
+     * bundled local stack. Kept as a fallback chain so the build never depends
+     * on a network font fetch. */
+    --font-sans: 'IBM Plex Sans Arabic', 'IBM Plex Sans', 'Inter', 'Segoe UI', 'Tahoma', 'Noto Sans Arabic', 'Arial', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Cascadia Code', Consolas, 'Courier New', monospace;
+
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --primary-muted: 214 95% 93%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 71% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 32 95% 44%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Lightened so grouping boxes read as quiet separation, not busy outlines. */
+    --border: 214 26% 93%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    /* FieldOps shape grammar: sharp, technical corners (base 4px). */
+    --radius: 0.375rem;
+  }
+
+  /*
+   * FieldOps Technical Nexus - dark-only obsidian/cyan palette.
+   * Ground canvas #0f131c, surface tiers #111827 -> #1c1f29, Electric Cyan
+   * (#00e5ff) primary with a dark on-primary, emerald/amber/crimson signals.
+   */
+  .dark {
+    --background: 222 30% 8%;
+    --foreground: 230 30% 90%;
+
+    --card: 221 39% 11%;
+    --card-foreground: 230 30% 90%;
+
+    --popover: 226 19% 14%;
+    --popover-foreground: 230 30% 90%;
+
+    --primary: 186 100% 50%;
+    --primary-foreground: 222 40% 6%;
+    --primary-muted: 192 60% 20%;
+
+    --secondary: 223 16% 18%;
+    --secondary-foreground: 230 30% 90%;
+
+    --muted: 226 19% 14%;
+    --muted-foreground: 190 15% 76%;
+
+    --accent: 223 16% 18%;
+    --accent-foreground: 230 30% 90%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 40% 6%;
+
+    --border: 217 19% 27%;
+    --input: 217 25% 30%;
+    --ring: 186 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    /* Sticky headers sit above content without layout shift on scroll. */
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Keyboard focus stays visible everywhere, mouse focus does not. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Respect users who disable motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /*
+   * Numbers, versions, dates and file names are always LTR data even inside an
+   * Arabic sentence; without this the bidi algorithm reorders "1.2 GB" and
+   * "Realtek_10.0.1" incorrectly.
+   */
+  .bidi-safe {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+
+  .card-hover {
+    @apply transition-shadow hover:shadow-card-hover;
+  }
+
+  /* Slim scrollbar for horizontally scrolling tables and filter rows. */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 9999px;
+  }
+
+  /*
+   * Borderless grouping surface. Reserve bordered `Card`s for primary
+   * interactive containers; use this for quiet visual grouping instead of
+   * stacking borders + shadows.
+   */
+  .surface {
+    @apply rounded-xl bg-muted/40;
+  }
+
+  /* A single top divider, applied only where separation genuinely helps. */
+  .hairline {
+    @apply border-t border-border;
+  }
+
+  /*
+   * Progressive-disclosure container built on a native <details>. The default
+   * marker is removed; a Lucide chevron is rendered inside the <summary> and
+   * rotated when open (see the `group-open:rotate-*` utilities on the icon).
+   */
+  .disclosure > summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .disclosure > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .disclosure > summary:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide native number spinners; counters here are never meant to be stepped. */
+  .no-spinners::-webkit-outer-spin-button,
+  .no-spinners::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-spinners {
+    -moz-appearance: textfield;
+  }
+}

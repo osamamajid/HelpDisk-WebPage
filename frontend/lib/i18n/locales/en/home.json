@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Technical resource library",
+  "title": "Find the right driver, every time",
+  "subtitle": "Search a curated collection of drivers, firmware and utilities filtered by brand, model and operating system.",
+  "browseAll": "Browse all files",
+  "favorites": "Favorites",
+  "categories": "Categories",
+  "recent": "Recently added",
+  "trending": "Most downloaded",
+  "viewAll": "View all",
+  "browse": "Browse",
+  "subcategories": "{count, plural, one {# subcategory} other {# subcategories}}",
+  "empty": {
+    "categories": "No categories have been created yet.",
+    "recent": "No files have been added yet.",
+    "trending": "No downloads recorded yet."
+  }
+}

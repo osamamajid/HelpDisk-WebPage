@@ -1,0 +1,19 @@
+{
+  "menu": "Menu",
+  "login": "Sign in",
+  "adminArea": "Admin",
+  "public": {
+    "home": "Home",
+    "search": "Browse",
+    "favorites": "Favorites"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "files": "Files",
+    "upload": "Upload",
+    "categories": "Categories",
+    "brands": "Brands",
+    "operatingSystems": "Operating systems",
+    "tags": "Tags"
+  }
+}
